@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collaborative Drawing - Gartic Style</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="watermark">wang2k8</div> <!-- Thêm watermark -->
+    <div class="canvas-container">
+        <canvas id="drawingCanvas"></canvas>
+    </div>
+
+    <div class="controls">
+        <div class="color-picker">
+            <span>Colors:</span>
+            <div id="colorPalette">
+                <!-- Bảng màu sẽ được tạo động từ JavaScript -->
+            </div>
+            <input type="color" id="customColor" />
+        </div>
+
+        <div class="brush-controls">
+            <span>Brush size:</span>
+            <input type="range" id="brushSize" min="1" max="50" value="5">
+        </div>
+    </div>
+
+    <div id="clock"></div> <!-- Di chuyển đồng hồ xuống dưới -->
+    <script src="app.js"></script>
+</body>
+</html>
