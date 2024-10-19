@@ -1,0 +1,117 @@
+/* Tổng thể phong cách Gartic.io */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #87CEEB; /* Nền xanh da trời */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative; /* Thêm vị trí tương đối cho body */
+}
+
+.watermark {
+    position: absolute; /* Đặt watermark ở vị trí tuyệt đối */
+    top: 50%; /* Giữa theo chiều dọc */
+    left: 50%; /* Giữa theo chiều ngang */
+    transform: translate(-50%, -50%) rotate(-30deg); /* Di chuyển về giữa và xoay 30 độ */
+    font-size: 5rem;
+    color: rgba(255, 255, 255, 0.1); /* Màu chữ nhạt */
+    pointer-events: none; /* Không cho phép tương tác với watermark */
+    white-space: nowrap; /* Ngăn dòng chữ xuống dòng */
+    z-index: -1; /* Đặt watermark phía dưới các phần khác */
+}
+
+.canvas-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Để đồng hồ có thể đặt ở góc */
+    margin-top: 20px; /* Tạo khoảng trống cho canvas */
+}
+
+canvas {
+    border-radius: 10px;
+    background-color: white; /* Bảng vẽ màu trắng */
+    cursor: crosshair;
+    width: 80vw;
+    height: 60vh;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); /* Hiệu ứng phát sáng cho bảng vẽ */
+}
+
+canvas:hover {
+    transform: scale(1.03);
+}
+
+#clock {
+    position: absolute; /* Đặt đồng hồ ở vị trí tuyệt đối */
+    bottom: 10px; /* Khoảng cách từ dưới lên */
+    left: 10px; /* Khoảng cách từ bên trái sang */
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333; /* Màu chữ đồng hồ */
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    gap: 50px;
+}
+
+.color-picker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#colorPalette {
+    display: grid;
+    grid-template-columns: repeat(5, 40px);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.color {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: border 0.2s ease, transform 0.2s ease;
+    border: 3px solid transparent; /* Viền trong suốt */
+}
+
+.color:hover {
+    transform: scale(1.1);
+    border: 3px solid #fff; /* Viền trắng khi hover */
+}
+
+input[type="color"] {
+    margin-top: 10px;
+    cursor: pointer;
+    border: none;
+    height: 40px;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+input[type="range"] {
+    width: 150px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+input[type="range"]:hover {
+    background-color: #4CAF50;
+}
